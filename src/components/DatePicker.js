@@ -1,11 +1,6 @@
 import React from 'react';
 import DatePicker from 'material-ui/DatePicker';
 
-const optionsStyle = {
-  maxWidth: 255,
-  marginRight: 'auto',
-};
-
 export default class Datepicker extends React.Component {
   constructor(props) {
     super(props);
