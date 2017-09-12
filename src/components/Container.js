@@ -3,7 +3,7 @@ import Paper from 'material-ui/Paper';
 import '../index.css';
 
 const style = {
-  height: 500,
+  height: 300,
   width:900,
   marginTop:20,
   marginLeft:200,

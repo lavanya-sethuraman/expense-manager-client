@@ -25,7 +25,7 @@ export default function SideBar() {
                     <Divider />
                     <MenuItem primaryText="Calculator" />
                     <Divider />
-                    <MenuItem primaryText="Set Budget" />
+                    <MenuItem primaryText="Calendar" />
                 </Menu>
             </Paper>
         </div>
