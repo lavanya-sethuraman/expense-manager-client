@@ -1,0 +1,22 @@
+import React from 'react';
+import Paper from 'material-ui/Paper';
+import '../index.css';
+
+const style = {
+  height: 500,
+  width:900,
+  marginTop:20,
+  marginLeft:200,
+  textAlign: 'center',
+  display: 'inline-block',
+};
+
+const Container = () => (
+  
+    <Paper style={style} zDepth={1}>
+        <h1>Welcome to Expense Manager!</h1>
+    </Paper>
+  
+);
+
+export default Container;
