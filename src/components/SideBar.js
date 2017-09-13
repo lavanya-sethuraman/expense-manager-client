@@ -3,6 +3,7 @@ import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
+import {Link} from 'react-router-dom';
 import '../index.css';
 
 const style = {
@@ -15,17 +16,30 @@ export default function SideBar() {
         <div className="sidebar">
             <Paper style={style}>
                 <Menu>
+    
+                    <Link className="noLine" to={`/setbudget`}>
                     <MenuItem primaryText="Set Budget" />
+                    </Link>
                     <Divider />
+                    <Link className="noLine" to={`/enterexpenses`}>
                     <MenuItem primaryText="Enter Expenses" />
+                    </Link>
                     <Divider />
+                    <Link className="noLine" to={`/graphs`}>
                     <MenuItem primaryText="Graphs and Charts" />
+                    </Link>
                     <Divider />
+                    <Link className="noLine" to={`/trackspending`}>
                     <MenuItem primaryText="Track Spending" />
+                    </Link>
                     <Divider />
+                    <Link className="noLine" to={`/calculator`}>
                     <MenuItem primaryText="Calculator" />
+                    </Link>
                     <Divider />
+                    <Link className="noLine" to={`/calendar`}>
                     <MenuItem primaryText="Calendar" />
+                    </Link>
                 </Menu>
             </Paper>
         </div>

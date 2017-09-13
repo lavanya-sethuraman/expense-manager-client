@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ExpenseManager from './components/ExpenseManager';
+import {Provider} from 'react-redux';
+import App from './components/App';
 import './index.css';
 
-const App = () => (
-  <MuiThemeProvider>
-    <ExpenseManager />
-  </MuiThemeProvider>
-);
+
 ReactDOM.render(
-  <App />,
+  <Provider>
+  <App />
+  </Provider>,
   document.getElementById('root')
 );
 

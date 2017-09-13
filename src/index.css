@@ -9,3 +9,6 @@ h1{
 .sidebar{
   position:fixed;
 }
+.noLine{
+  text-decoration: none;
+}
