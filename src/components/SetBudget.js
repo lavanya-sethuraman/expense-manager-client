@@ -12,72 +12,73 @@ const style = {
     display: 'inline-block',
 };
 
-export default function SetBudget() {
+export default function SetBudget(props) {
     return (
         <Paper style={style} zDepth={1}>
             <h1>Set Budget</h1>
             <TextField
-                hintText="Number"
+                defaultValue={props.budget.gas}
                 floatingLabelText="Gas"
                 floatingLabelFixed={true}
+                onChange={(e) => {console.log(e.currentTarget.value);}}
             />
             <br />
             <TextField
-                hintText="Number"
+                defaultValue={props.budget.water}
                 floatingLabelText="Water"
                 floatingLabelFixed={true}
             />
             <br />
             <TextField
-                hintText="Number"
+                defaultValue={props.budget.electricity}
                 floatingLabelText="Electricity"
                 floatingLabelFixed={true}
             />
             <br />
             <TextField
-                hintText="Number"
+                defaultValue={props.budget.rent}
                 floatingLabelText="Rent or Mortgage"
                 floatingLabelFixed={true}
             />
             <br />
             <TextField
-                hintText="Number"
+                defaultValue={props.budget.tv}
                 floatingLabelText="Television"
                 floatingLabelFixed={true}
             />
             <br />
             <TextField
-                hintText="Number"
+                defaultValue={props.budget.phone}
                 floatingLabelText="Phone"
                 floatingLabelFixed={true}
             />
             <br />
             <TextField
-                hintText="Number"
+                defaultValue={props.budget.groceries}     
                 floatingLabelText="Groceries"
                 floatingLabelFixed={true}
             />
             <br />
             <TextField
-                hintText="Number"
+                defaultValue={props.budget.restaurant}
                 floatingLabelText="Restaurant"
                 floatingLabelFixed={true}
             />
             <br />
             <TextField
-                hintText="Number"
+                defaultValue={props.budget.kids}
                 floatingLabelText="Kids"
                 floatingLabelFixed={true}
             />
             <br />
             <TextField
-                hintText="Number"
+                defaultValue={props.budget.travel}
                 floatingLabelText="Travel"
                 floatingLabelFixed={true}
             />
             <br />
             <TextField
-                hintText="Number"
+                defaultValue={props.budget.misc}
                 floatingLabelText="Miscellaneous"
                 floatingLabelFixed={true}
             />

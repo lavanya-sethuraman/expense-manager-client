@@ -53,7 +53,7 @@ export default class EnterExpense extends React.Component {
                 </DropDownMenu>
                 <br />
                 <TextField
-                    hintText="Number"
+                    hintText="Amount"
                     floatingLabelText="Enter Expense"
                     floatingLabelFixed={true}
                 />
