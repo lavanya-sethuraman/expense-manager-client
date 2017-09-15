@@ -11,7 +11,7 @@ const style = {
     height: 350,
     width: 900,
     marginTop: 20,
-    marginLeft: 200,
+    marginLeft: 50,
     textAlign: 'center',
     display: 'inline-block',
 };

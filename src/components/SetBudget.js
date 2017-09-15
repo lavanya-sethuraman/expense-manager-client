@@ -8,7 +8,7 @@ const style = {
     height: 940,
     width: 900,
     marginTop: 20,
-    marginLeft: 200,
+    marginLeft: 50,
     textAlign: 'center',
     display: 'inline-block',
 };
