@@ -2,11 +2,10 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
-import DashBoardHeader from './DashBoardHeader';
-import SideBar from './SideBar';
 import '../index.css';
 
 const style = {
+    height: 940,
     width: 900,
     marginTop: 20,
     marginLeft: 200,
@@ -16,9 +15,6 @@ const style = {
 
 export default function SetBudget(props) {
     return (
-        <div>
-            <DashBoardHeader />
-            <SideBar />
             <Paper style={style} zDepth={1}>
                 <h1>Set Budget</h1>
                 <TextField
@@ -93,7 +89,6 @@ export default function SetBudget(props) {
                 <br />
                 <br />
             </ Paper>
-        </div>
     );
 }
 SetBudget.defaultProps = {

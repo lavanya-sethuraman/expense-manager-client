@@ -5,11 +5,10 @@ import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import Datepicker from './DatePicker';
-import DashBoardHeader from './DashBoardHeader';
-import SideBar from './SideBar';
 import '../index.css';
 
 const style = {
+    height: 350,
     width: 900,
     marginTop: 20,
     marginLeft: 200,
@@ -34,9 +33,6 @@ export default class EnterExpense extends React.Component {
 
     render() {
         return (
-            <div>
-                <DashBoardHeader />
-                <SideBar />
                 <Paper style={style} zDepth={1}>
                     <h1>Enter Expenses</h1>
                     <DropDownMenu
@@ -69,7 +65,6 @@ export default class EnterExpense extends React.Component {
                     <br />
                     <br />
                 </Paper>
-            </div>
         );
     }
 }

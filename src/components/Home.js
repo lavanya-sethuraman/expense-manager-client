@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import Container from './Container';
+import About from './About';
 // import {Link, Redirect} from 'react-router-dom';
 import "../index.css";
 
@@ -11,7 +11,7 @@ export default function Home (props) {
     return (
             <div>
                 <Header /> 
-                <Container />
+                <About />
             </div>
         
     );

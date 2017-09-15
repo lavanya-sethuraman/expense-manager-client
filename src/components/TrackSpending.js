@@ -8,11 +8,10 @@ import {
     TableRow,
     TableRowColumn,
 } from 'material-ui/Table';
-import DashBoardHeader from './DashBoardHeader';
-import SideBar from './SideBar';
 import '../index.css';
 
 const style = {
+    height: 670,
     width: 900,
     marginTop: 20,
     marginLeft: 200,
@@ -22,9 +21,6 @@ const style = {
 
 export default function TrackSpending(props) {
     return (
-        <div>
-            <DashBoardHeader />
-            <SideBar />
             <Paper style={style} zDepth={1}>
                 <h1>Track Expenses</h1>
                 <Table>
@@ -81,8 +77,9 @@ export default function TrackSpending(props) {
                         </TableRow>
                     </TableBody>
                 </Table>
+                <br />
+                <br />
             </Paper>
-        </div>
     );
 }
 

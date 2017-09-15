@@ -11,7 +11,7 @@ const style = {
     display: 'inline-block',
 };
 
-export default function Container() {
+export default function About() {
     return (
         <Paper style={style} zDepth={1}>
             <h1>Welcome to Expense Manager!</h1>
