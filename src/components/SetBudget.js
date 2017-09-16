@@ -2,6 +2,8 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
+import { connect } from 'react-redux';
+import { setBudget } from '../actions'
 import '../index.css';
 
 const style = {
@@ -13,94 +15,118 @@ const style = {
     display: 'inline-block',
 };
 
-export default function SetBudget(props) {
-    return (
+export class SetBudget extends React.Component {
+
+    setBudget(budget) {
+        this.props.dispatch(setBudget(budget));
+    }
+
+    render() {
+        let budget = Object.assign({}, this.props.budget);
+        console.log("The Budget is set as: ", this.props.budget);
+        return (
             <Paper style={style} zDepth={1}>
                 <h1>Set Budget</h1>
                 <TextField
-                    /* defaultValue={props.budget.gas} */
+                    type="number"
+                    min='0'
+                    name='gas'
                     floatingLabelText="Gas"
                     floatingLabelFixed={true}
-                    onChange={(e) => { console.log(e.currentTarget.value); }}
+                    onChange={(e) => { budget.gas = e.currentTarget.value; }}
                 />
                 <br />
                 <TextField
-                    /* defaultValue={props.budget.water} */
+                    type="number"
+                    min='0'
                     floatingLabelText="Water"
                     floatingLabelFixed={true}
+                    onChange={(e) => { budget.water = e.currentTarget.value; }}
                 />
                 <br />
                 <TextField
-                    /* defaultValue={props.budget.electricity} */
+                    type="number"
+                    min='0'
                     floatingLabelText="Electricity"
                     floatingLabelFixed={true}
+                    onChange={(e) => { budget.electricity = e.currentTarget.value; }}
                 />
                 <br />
                 <TextField
-                    /* defaultValue={props.budget.rent} */
+                    type="number"
+                    min='0'
                     floatingLabelText="Rent or Mortgage"
                     floatingLabelFixed={true}
+                    onChange={(e) => { budget.rent = e.currentTarget.value; }}
                 />
                 <br />
                 <TextField
-                    /* defaultValue={props.budget.tv} */
+                    type="number"
+                    min='0'
                     floatingLabelText="Television"
                     floatingLabelFixed={true}
+                    onChange={(e) => { budget.tv = e.currentTarget.value; }}
                 />
                 <br />
                 <TextField
-                    /* defaultValue={props.budget.phone} */
+                    type="number"
+                    min='0'
                     floatingLabelText="Phone"
                     floatingLabelFixed={true}
+                    onChange={(e) => { budget.phone = e.currentTarget.value; }}
                 />
                 <br />
                 <TextField
-                    /* defaultValue={props.budget.groceries} */
+                    type="number"
+                    min='0'
                     floatingLabelText="Groceries"
                     floatingLabelFixed={true}
+                    onChange={(e) => { budget.groceries = e.currentTarget.value; }}
                 />
                 <br />
                 <TextField
-                    /* defaultValue={props.budget.restaurant} */
+                    type="number"
+                    min='0'
                     floatingLabelText="Restaurant"
                     floatingLabelFixed={true}
+                    onChange={(e) => { budget.restaurant = e.currentTarget.value; }}
                 />
                 <br />
                 <TextField
-                    /* defaultValue={props.budget.kids} */
+                    type="number"
+                    min='0'
                     floatingLabelText="Kids"
                     floatingLabelFixed={true}
+                    onChange={(e) => { budget.kids = e.currentTarget.value; }}
                 />
                 <br />
                 <TextField
-                    /* defaultValue={props.budget.travel} */
+                    type="number"
+                    min='0'
                     floatingLabelText="Travel"
                     floatingLabelFixed={true}
+                    onChange={(e) => { budget.travel = e.currentTarget.value; }}
                 />
                 <br />
                 <TextField
-                    /* defaultValue={props.budget.misc} */
+                    type="number"
+                    min='0'
                     floatingLabelText="Miscellaneous"
                     floatingLabelFixed={true}
+                    onChange={(e) => { budget.misc = e.currentTarget.value; }}
                 />
                 <br />
                 <br />
-                <RaisedButton label="Set Budget" primary={true} />
+                <RaisedButton label="Set Budget" primary={true} onClick={() => { this.setBudget(budget) }} />
                 <br />
                 <br />
             </ Paper>
-    );
+        );
+    }
 }
-SetBudget.defaultProps = {
-        gas:100.00,
-        water:60.00,
-        electricity:150.00,
-        rent:1500.00,
-        tv:100.00,
-        phone:120.00,
-        groceries:500.00,
-        restaurant:100.00,
-        kids:500.00,
-        travel:200.00,
-        misc:100.00
-}
+
+const mapStateToProps = state => ({
+    budget: state.budget
+});
+
+export default connect(mapStateToProps)(SetBudget);

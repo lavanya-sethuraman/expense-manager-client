@@ -8,14 +8,14 @@ export default function DashBoard() {
   return (
 
     <Grid fluid>
-    <Row>
-      <DashBoardHeader />
-    </Row>
-    <Row>
-      <MainContainer />
-    </Row>
-</Grid>
-    
+      <Row>
+        <DashBoardHeader />
+      </Row>
+      <Row>
+        <MainContainer />
+      </Row>
+    </Grid>
+
   );
 
 }

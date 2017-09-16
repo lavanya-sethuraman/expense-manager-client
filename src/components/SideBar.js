@@ -13,26 +13,26 @@ const style = {
 
 export default function SideBar() {
     return (
-                <Paper className="sidebar left" style={style}>
-                    <Menu>
-                        <Link className="noLine" to={`/setbudget`}>
-                            <MenuItem primaryText="Set Budget" />
-                        </Link>
-                        <Divider />
-                        <Link className="noLine" to={`/enterexpenses`}>
-                            <MenuItem primaryText="Enter Expenses" />
-                        </Link>
-                        <Divider />
-                        <Link className="noLine" to={`/graphs`}>
-                            <MenuItem primaryText="Graphs and Charts" />
-                        </Link>
-                        <Divider />
-                        <Link className="noLine" to={`/trackspending`}>
-                            <MenuItem primaryText="Track Spending" />
-                        </Link>
-                    </Menu>
-                    </Paper>
-                
+        <Paper className="sidebar left" style={style}>
+            <Menu>
+                <Link className="noLine" to={`/setbudget`}>
+                    <MenuItem primaryText="Set Budget" />
+                </Link>
+                <Divider />
+                <Link className="noLine" to={`/enterexpenses`}>
+                    <MenuItem primaryText="Enter Expenses" />
+                </Link>
+                <Divider />
+                <Link className="noLine" to={`/graphs`}>
+                    <MenuItem primaryText="Graphs and Charts" />
+                </Link>
+                <Divider />
+                <Link className="noLine" to={`/trackspending`}>
+                    <MenuItem primaryText="Track Spending" />
+                </Link>
+            </Menu>
+        </Paper>
+
     );
 }
 

@@ -21,43 +21,43 @@ const routes = [
     path: '/dashboard',
     exact: true,
     main: () => <Paper style={style} zDepth={1}><h1>Welcome User!</h1></Paper>,
-},
-  {
-      path: '/setbudget',
-      exact: true,
-      main: () => <SetBudget />,
   },
   {
-      path: '/enterexpenses',
-      exact: true,
-      main: () => <EnterExpense />,
+    path: '/setbudget',
+    exact: true,
+    main: () => <SetBudget />,
   },
   {
-      path: '/trackspending',
-      exact: true,
-      main: () => <TrackSpending />,
+    path: '/enterexpenses',
+    exact: true,
+    main: () => <EnterExpense />,
+  },
+  {
+    path: '/trackspending',
+    exact: true,
+    main: () => <TrackSpending />,
   },
   {
     path: '/graphs',
     exact: true,
     main: () => <Paper style={style} zDepth={1}><h1>Graphs!!</h1>Yet to Come!</Paper>,
-}
+  }
 ]
 
 export default function MainContainer() {
   return (
-      <Router>
-        <div className="inline">
-          <SideBar />
-              {routes.map((route, index) => (
-              <Route
-                  key={index}
-                  path={route.path}
-                  exact={route.eaxct}
-                  component={route.main}
-              />
-          ))}
-          </div>
-      </Router>
+    <Router>
+      <div className="inline">
+        <SideBar />
+        {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.eaxct}
+            component={route.main}
+          />
+        ))}
+      </div>
+    </Router>
   );
 }

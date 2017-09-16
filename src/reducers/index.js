@@ -1,30 +1,39 @@
 import * as actions from '../actions';
 
-export const expenseMangerReducer = () => {
-    
-    // if (action.type === actions.ADD_LIST) {
-    //     return Object.assign({}, state, {
-    //         lists: [...state.lists, {
-    //             title: action.title,
-    //             cards: []
-    //         }]
-    //     });
-    // }
-    // else if (action.type === actions.ADD_CARD) {
-    //     let lists = state.lists.map((list, index) => {
-    //         if (index !== action.listIndex) {
-    //             return list;
-    //         }
-    //         return Object.assign({}, list, {
-    //             cards: [...list.cards, {
-    //                 text: action.text
-    //             }]
-    //         });
-    //     });
-
-    //     return Object.assign({}, state, {
-    //         lists
-    //     });
-    // }
-    // return state;
+const initialState = {
+    budget: {
+            gas: 0,
+            water:0,
+            electricity:0,
+            tv:0,
+            rent:0,
+            phone:0,
+            misc:0,
+            groceries:0,
+            kids:0,
+            travel:0,
+            restaurant:0
+    },
+    expense: []
 };
+
+export const expenseManagerReducer = (state = initialState, action) => {
+
+    if (action.type === actions.SET_BUDGET) {
+        return Object.assign({}, state, {budget:action.budget});
+    }
+    else if (action.type === actions.ENTER_EXPENSE) {
+        return Object.assign({}, state, {
+            expense: [...state.expense, {
+                ...action.expense
+            }]
+            
+        });
+    }
+    else if (action.type === actions.TRACK_SPENDING) {
+        return action.expense;
+    }
+    
+    return state;
+};
+
