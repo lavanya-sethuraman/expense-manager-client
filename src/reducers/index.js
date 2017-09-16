@@ -31,7 +31,7 @@ export const expenseManagerReducer = (state = initialState, action) => {
         });
     }
     else if (action.type === actions.TRACK_SPENDING) {
-        return action.expense;
+        return state;
     }
     
     return state;

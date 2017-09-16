@@ -7,7 +7,7 @@ export default class Datepicker extends React.Component {
 
     const minDate = new Date();
     const maxDate = new Date();
-    minDate.setMonth(minDate.getMonth() - 1);
+    minDate.setDate(minDate.getDate()-10);
     maxDate.setDate(maxDate.getDate());
 
     this.state = {
@@ -15,11 +15,7 @@ export default class Datepicker extends React.Component {
       maxDate: maxDate,
     };
   }
-
-  disableDates(date) {
-    
-  }
-
+  
   render() {
     return (
       <div>

@@ -4,6 +4,7 @@ import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux';
 import { setBudget } from '../actions'
+import SetBudgetModal from './SetBudgetModal';
 import '../index.css';
 
 const style = {
@@ -118,6 +119,7 @@ export class SetBudget extends React.Component {
                 <br />
                 <br />
                 <RaisedButton label="Set Budget" primary={true} onClick={() => { this.setBudget(budget) }} />
+                <SetBudgetModal budget={this.props.budget}/>
                 <br />
                 <br />
             </ Paper>

@@ -8,6 +8,8 @@ import {
     TableRow,
     TableRowColumn,
 } from 'material-ui/Table';
+import { connect } from 'react-redux';
+import { trackSpending } from '../actions'
 import '../index.css';
 
 const style = {
@@ -19,7 +21,11 @@ const style = {
     display: 'inline-block',
 };
 
-export default function TrackSpending(props) {
+export class TrackSpending extends React.Component {
+
+    render() {
+    this.props.dispatch(trackSpending());
+    console.log('BUDGET',this.props.budget,'EXPENSE',this.props.expense)
     return (
             <Paper style={style} zDepth={1}>
                 <h1>Track Expenses</h1>
@@ -82,4 +88,11 @@ export default function TrackSpending(props) {
             </Paper>
     );
 }
+}
 
+const mapStateToProps = state => ({
+    budget: state.budget,
+    expense: state.expense
+});
+
+export default connect(mapStateToProps)(TrackSpending);

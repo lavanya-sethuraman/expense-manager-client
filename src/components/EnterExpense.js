@@ -23,12 +23,11 @@ const styles = {
     },
 };
 
-
 export class EnterExpense extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 1,
+            value: 0,
             amount: 0,
             date: new Date()
         };
@@ -38,12 +37,11 @@ export class EnterExpense extends React.Component {
 
     enterExpense(expense) {
         this.props.dispatch(enterExpense(expense));
-        console.log(this.props.expense);
-
     }
 
     render() {
         let expense = Object.assign({}, this.state);
+        
         return (
             <Paper style={style} zDepth={1}>
                 <h1>Enter Expenses</h1>
@@ -52,6 +50,7 @@ export class EnterExpense extends React.Component {
                     onChange={this.handleChange}
                     style={styles.customWidth}
                     autoWidth={false} >
+                    <MenuItem value={0} primaryText="Category" />
                     <MenuItem value={1} primaryText="Gas" />
                     <MenuItem value={2} primaryText="Water" />
                     <MenuItem value={3} primaryText="Electricity" />
@@ -76,7 +75,7 @@ export class EnterExpense extends React.Component {
                 <br />
                 <Datepicker onChange={(e, date) => { this.setState({ date }) }} />
                 <br />
-                <RaisedButton label="Enter Expense" primary={true} onClick={() => { this.enterExpense(expense) }} />
+                <RaisedButton label="Enter Expense" primary={true} onClick={() => { this.enterExpense(expense); }} />
                 <br />
                 <br />
             </Paper>
