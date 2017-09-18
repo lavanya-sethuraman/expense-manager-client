@@ -40,7 +40,9 @@ const routes = [
   {
     path: '/graphs',
     exact: true,
-    main: () => <Paper style={style} zDepth={1}><h1>Graphs!!</h1>Yet to Come!</Paper>,
+    main: () => <Paper style={style} zDepth={1}>
+      <div id="container"></div>
+    </Paper>,
   }
 ]
 

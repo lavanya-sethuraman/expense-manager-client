@@ -1,7 +1,6 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux';
 import { setBudget } from '../actions'
 import SetBudgetModal from './SetBudgetModal';
@@ -118,8 +117,7 @@ export class SetBudget extends React.Component {
                 />
                 <br />
                 <br />
-                <RaisedButton label="Set Budget" primary={true} onClick={() => { this.setBudget(budget) }} />
-                <SetBudgetModal budget={this.props.budget}/>
+                <SetBudgetModal budget={budget} setBudget={this.setBudget.bind(this)} />
                 <br />
                 <br />
             </ Paper>

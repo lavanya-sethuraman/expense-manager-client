@@ -3,10 +3,10 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
 import Datepicker from './DatePicker';
 import { connect } from 'react-redux';
 import { enterExpense } from '../actions'
+import EnterExpenseModal from './EnterExpenseModal';
 import '../index.css';
 
 const style = {
@@ -35,13 +35,20 @@ export class EnterExpense extends React.Component {
     }
 
     handleChange = (event, index, value) => { 
-        this.setState({ value }); 
-        //const category = [ 'gas','water','electricity','rent','tv','phone','groceries','restaurant','kids','travel','misc' ];
+        this.setState({ value });
+        this.setCategory(value); 
     }
 
+    setCategory(value){
+        const categories = [ 'gas','water','electricity','rent','tv','phone','groceries','restaurant','kids','travel','misc' ];
+        const category = categories.filter(function(category,index){
+                                                if(value-1 == index)
+                                                return category; });
+        this.setState ({category:category[0]});
+
+    }
     enterExpense(expense) {
         this.props.dispatch(enterExpense(expense));
-        console.log('Expense',this.props.expense);
     }
 
     render() {
@@ -54,7 +61,7 @@ export class EnterExpense extends React.Component {
                     onChange={this.handleChange}
                     style={styles.customWidth}
                     autoWidth={false} >
-                    <MenuItem value={0} primaryText="Category" disabled />
+                    <MenuItem value={0} primaryText="Category" disabled/>
                     <MenuItem value={1} primaryText="Gas" />
                     <MenuItem value={2} primaryText="Water" />
                     <MenuItem value={3} primaryText="Electricity" />
@@ -79,7 +86,7 @@ export class EnterExpense extends React.Component {
                 <br />
                 <Datepicker  onChange={(e, date) => { this.setState({ date }) }} />
                 <br />
-                <RaisedButton label="Enter Expense" primary={true} onClick={() => { this.enterExpense(expense); }} />
+                <EnterExpenseModal expense={expense} enterExpense={this.enterExpense.bind(this)} />
                 <br />
                 <br />
             </Paper>

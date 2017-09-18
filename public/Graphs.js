@@ -1,39 +1,5 @@
-Highcharts.chart('container', {
-    chart: {
-        type: 'column',
-        options3d: {
-            enabled: true,
-            alpha: 10,
-            beta: 25,
-            depth: 70
-        }
-    },
-    title: {
-        text: 'Expense Manager'
-    },
-    subtitle: {
-        text: 'Expenditure on Monthly Basis'
-    },
-    plotOptions: {
-        column: {
-            depth: 20
-        }
-    },
-    xAxis: {
-        categories: Highcharts.getOptions().lang.shortMonths
-    },
-    yAxis: {
-        title: {
-            text: 'Amount'
-        }
-    },
-    series: [{
-        name: 'Expenses',
-        data: [2000, 3000, null, 4000, 0, 5000, 10000, 400, 6000, 3000,5600,6000]
-    }]
-});
-
-Highcharts.chart('container-1', {
+$(function () {
+    Highcharts.chart('container', {
     chart: {
         type: 'column',
         options3d: {
@@ -44,15 +10,15 @@ Highcharts.chart('container-1', {
             depth: 40
         }
     },
-
+  
     title: {
         text: 'Expense Manager'
     },
-
+  
     xAxis: {
         categories: ['Jan', 'Feb', 'March', 'April', 'May']
     },
-
+  
     yAxis: {
         allowDecimals: false,
         min: 100,
@@ -60,19 +26,19 @@ Highcharts.chart('container-1', {
             text: 'Amount'
         }
     },
-
+  
     tooltip: {
         headerFormat: '<b>{point.key}</b><br>',
         pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
     },
-
+  
     plotOptions: {
         column: {
             stacking: 'normal',
             depth: 40
         }
     },
-
+  
     series: [{
         name: 'Gas',
         data: [200, 350, 400, 500, 270],
@@ -118,4 +84,5 @@ Highcharts.chart('container-1', {
         data: [200, 350, 400, 500, 270],
         stack: 'expense'
     }]
+  });
 });

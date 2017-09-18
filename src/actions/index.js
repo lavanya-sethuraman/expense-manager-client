@@ -18,16 +18,3 @@ export const trackSpending = (expense,budget) => ({
     expense,
     budget
 });
-
-// export const fetchDashboard = () => dispatch => {
-//     fetch(`${API_BASE_URL}/dashboard`)
-//         .then(res => {
-//             if (!res.ok) {
-//                 return Promise.reject(res.statusText);
-//             }
-//             return res.json();
-//         })
-//         .then(board => {
-//             dispatch(fetchBoardSuccess(board));
-//         });
-// };
