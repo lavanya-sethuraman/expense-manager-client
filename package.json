@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jwt-decode": "^2.2.0",
     "material-ui": "^0.19.1",
     "muicss": "^0.9.25",
     "react": "^15.6.1",
@@ -11,7 +12,10 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.13",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-form": "^7.0.4",
+    "redux-thunk": "^2.2.0",
+    "validator": "^8.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
