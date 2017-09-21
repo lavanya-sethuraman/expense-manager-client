@@ -2,9 +2,6 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-import { List, ListItem } from 'material-ui/List';
-import Paper from 'material-ui/Paper';
-
 
 export default class EnterExpenseModal extends React.Component {
     constructor(props) {

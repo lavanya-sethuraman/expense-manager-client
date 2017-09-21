@@ -42,8 +42,8 @@ export class EnterExpense extends React.Component {
     setCategory(value){
         const categories = [ 'gas','water','electricity','rent','tv','phone','groceries','restaurant','kids','travel','misc' ];
         const category = categories.filter(function(category,index){
-                                                if(value-1 == index)
-                                                return category; });
+                                                if(value-1 === index)
+                                                return category; return "";});
         this.setState ({category:category[0]});
 
     }
