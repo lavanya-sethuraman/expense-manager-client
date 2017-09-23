@@ -3,10 +3,10 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
-import Datepicker from './DatePicker';
+import Datepicker from '../components/DatePicker';
 import { connect } from 'react-redux';
-import { enterExpense } from '../actions'
-import EnterExpenseModal from './EnterExpenseModal';
+import { enterExpense } from '../actions/index'
+import EnterExpenseModal from '../containers/EnterExpenseModal';
 import '../index.css';
 
 const style = {
@@ -48,6 +48,7 @@ export class EnterExpense extends React.Component {
 
     }
     enterExpense(expense) {
+        console.log(this.props.expense)
         this.props.dispatch(enterExpense(expense));
     }
 

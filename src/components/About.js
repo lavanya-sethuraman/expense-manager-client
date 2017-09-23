@@ -1,6 +1,5 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
-import '../index.css';
 
 const style = {
     height: 500,

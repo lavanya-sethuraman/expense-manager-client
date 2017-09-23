@@ -1,12 +1,26 @@
 import React from 'react';
-import DashBoardHeader from './DashBoardHeader';
-import MainContainer from './MainContainer';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+import {fetchProtectedData} from '../actions/protected-data';
+import DashBoardHeader from '../components/DashBoardHeader';
+import MainContainer from '../components/MainContainer';
 import { Grid, Row } from 'react-flexbox-grid';
 import "../index.css";
 
-export default function DashBoard() {
-  return (
+export class DashBoard extends React.Component {
+  componentDidMount() {
+    if (!this.props.loggedIn) {
+        return;
+    }
+    this.props.dispatch(fetchProtectedData());
+}
 
+
+  render(){
+    if (!this.props.loggedIn) {
+      return <Redirect to="/" />;
+  }
+  return (
     <Grid fluid>
       <Row>
         <DashBoardHeader />
@@ -17,5 +31,18 @@ export default function DashBoard() {
     </Grid>
 
   );
-
+  }
 }
+const mapStateToProps = state => {
+  const {currentUser} = state.auth;
+  return {
+      loggedIn: currentUser !== null,
+      userName: currentUser ? state.auth.currentUser.userName : '',
+      name: currentUser
+          ? `${currentUser.fullName}`
+          : '',
+      protectedData: state.protectedData.data
+  };
+};
+
+export default connect(mapStateToProps)(DashBoard);

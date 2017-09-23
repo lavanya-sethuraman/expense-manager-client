@@ -9,7 +9,7 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 import { connect } from 'react-redux';
-import { trackSpending } from '../actions'
+import { trackSpending } from '../actions/index'
 import '../index.css';
 
 const style = {

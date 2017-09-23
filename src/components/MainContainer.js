@@ -1,9 +1,9 @@
 import React from 'react';
-import SideBar from './SideBar';
+import SideBar from '../components/SideBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import SetBudget from './SetBudget';
-import EnterExpense from './EnterExpense';
-import TrackSpending from './TrackSpending';
+import SetBudget from '../containers/SetBudget';
+import EnterExpense from '../containers/EnterExpense';
+import TrackSpending from '../containers/TrackSpending';
 import Paper from 'material-ui/Paper';
 import '../index.css';
 

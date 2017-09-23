@@ -14,6 +14,7 @@ export default class EnterExpenseModal extends React.Component {
         const { enterExpense, expense } = this.props;
         enterExpense(expense);
         this.setState({ open: true });
+        console.log(this.props.expense)
     };
 
     handleClose = () => {
@@ -21,7 +22,6 @@ export default class EnterExpenseModal extends React.Component {
     };
 
     render() {
-        console.log(this.props.expense.category)
         const actions = [
             <FlatButton
                 label="Okay!"
@@ -39,7 +39,7 @@ export default class EnterExpenseModal extends React.Component {
                     open={this.state.open}
                     onRequestClose={this.handleClose}>
                     
-                    Spent:{this.props.expense.amount}
+                    Spent:{this.props.expense.amount} on:{this.props.expense.category}
                     
         </Dialog>
             </div>

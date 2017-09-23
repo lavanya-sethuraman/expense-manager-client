@@ -1,22 +1,65 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Home from './Home';
-import DashBoard from './DashBoard';
-import {BrowserRouter as Router,Route} from 'react-router-dom';
+import Home from '../components/Home';
+import DashBoard from '../components/DashBoard';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { refreshAuthToken } from '../actions/auth';
 import "../index.css";
 
-export default function ExpenseManager() {
-    return (
-        <MuiThemeProvider>
-        <Router>
-            <div>
-                <main>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/dashboard" component={DashBoard} />
-                </main>
-            </div>
-        </Router>
-        </MuiThemeProvider>
-    );
-  
+export class ExpenseManager extends React.Component {
+    componentDidMount() {
+        if (this.props.hasAuthToken) {
+            this.props.dispatch(refreshAuthToken());
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.loggedIn && !this.props.loggedIn) {
+            this.startPeriodicRefresh();
+        } else if (!nextProps.loggedIn && this.props.loggedIn) {
+            this.stopPeriodicRefresh();
+        }
+    }
+
+    componentWillUnmount() {
+        this.stopPeriodicRefresh();
+    }
+
+    startPeriodicRefresh() {
+        this.refreshInterval = setInterval(
+            () => this.props.dispatch(refreshAuthToken()),
+            60 * 60 * 1000 
+        );
+    }
+
+    stopPeriodicRefresh() {
+        if (!this.refreshInterval) {
+            return;
+        }
+
+        clearInterval(this.refreshInterval);
+    }
+    render() {
+        console.log("in expense manager",this.props)
+        return (
+            <MuiThemeProvider>
+                <Router>
+                    <div>
+                        <main>
+                            <Route exact path="/" component={Home} />
+                            <Route exact path="/dashboard" component={DashBoard} />
+                        </main>
+                    </div>
+                </Router>
+            </MuiThemeProvider>
+        );
+    }
 }
+
+const mapStateToProps = state => ({
+    hasAuthToken: state.auth.authToken !== null,
+    loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(ExpenseManager);

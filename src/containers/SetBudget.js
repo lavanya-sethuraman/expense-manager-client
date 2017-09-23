@@ -2,8 +2,8 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import { connect } from 'react-redux';
-import { setBudget } from '../actions'
-import SetBudgetModal from './SetBudgetModal';
+import { setBudget } from '../actions/index'
+import SetBudgetModal from '../containers/SetBudgetModal';
 import '../index.css';
 
 const style = {

@@ -17,6 +17,7 @@ export default class Login extends React.Component {
     };
 
     handleClose = () => {
+        
         this.setState({ open: false });
     };
 
@@ -43,8 +44,8 @@ export default class Login extends React.Component {
                     modal={true}
                     open={this.state.open} >
                     <TextField
-                        hintText="example@gmail.com"
-                        floatingLabelText="Gmail Id"
+                        hintText="User Name"
+                        floatingLabelText="User Name"
                         floatingLabelFixed={true}
                     /><br />
                     <TextField

@@ -1,10 +1,15 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Avatar from 'material-ui/Avatar';
-import Login from './Login';
-import Signup from './Signup';
+import Login from '../containers/Login';
+import Signup from '../containers/Signup';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-export default function Header() {
+export function Header(props) {
+    if (props.loggedIn) {
+        return <Redirect to="/dashboard" />;
+    }
     return (
         <AppBar title={<span >Expense Manager</span>}
             iconElementLeft={<Avatar src="" size={30} />}
@@ -16,3 +21,9 @@ export default function Header() {
     );
 
 }
+
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(Header);
