@@ -1,7 +1,7 @@
 import jwtDecode from 'jwt-decode';
-import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './utils';
-import {saveAuthToken, clearAuthToken} from '../local-storage';
+import { API_BASE_URL } from '../config';
+import { normalizeResponseErrors } from './utils';
+import { saveAuthToken, clearAuthToken } from '../local-storage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
@@ -17,14 +17,13 @@ export const setCurrentUser = currentUser => ({
 
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
-    console.log(decodedToken.user);
     dispatch(setAuthToken(authToken));
     dispatch(setCurrentUser(decodedToken.user));
     saveAuthToken(authToken);
 };
 
 export const login = (userName, password) => dispatch => {
-    
+
     const token = btoa(`${userName}:${password}`);
     return (
         fetch(`${API_BASE_URL}/auth/login`, {
@@ -34,16 +33,10 @@ export const login = (userName, password) => dispatch => {
             }
         })
             .then(res => normalizeResponseErrors(res))
-            .then(res => console.log("login res",res.json()))
-            .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+            .then(res => res.json())
+            .then(({ authToken }) => storeAuthInfo(authToken, dispatch))
             .catch(err => {
-                const {code} = err;
-                if (code === 401) {
-                    return ({
-                            _error: 'Incorrect username or password'
-                    });
-                    
-                }
+                return (err);
             })
     );
 };
@@ -58,9 +51,9 @@ export const refreshAuthToken = () => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+        .then(({ authToken }) => storeAuthInfo(authToken, dispatch))
         .catch(err => {
-            const {code} = err;
+            const { code } = err;
             if (code === 401) {
                 dispatch(setCurrentUser(null));
                 dispatch(setAuthToken(null));

@@ -7,19 +7,22 @@ import MainContainer from '../components/MainContainer';
 import { Grid, Row } from 'react-flexbox-grid';
 import "../index.css";
 
+
 export class DashBoard extends React.Component {
+  
   componentDidMount() {
     if (!this.props.loggedIn) {
-        return;
+       return;
     }
     this.props.dispatch(fetchProtectedData());
 }
 
-
   render(){
+    console.log("in dashboard", this.props);
     if (!this.props.loggedIn) {
       return <Redirect to="/" />;
-  }
+    }
+  
   return (
     <Grid fluid>
       <Row>

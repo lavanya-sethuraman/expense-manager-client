@@ -20,7 +20,7 @@ const routes = [
   {
     path: '/dashboard',
     exact: true,
-    main: () => <Paper style={style} zDepth={1}><h1>Welcome User!</h1></Paper>,
+    main: () => <Paper style={style} zDepth={1}><h1>Welcome!</h1></Paper>,
   },
   {
     path: '/setbudget',

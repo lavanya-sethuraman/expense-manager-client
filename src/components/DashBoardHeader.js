@@ -7,7 +7,13 @@ import {setCurrentUser, setAuthToken} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 
 export class DashBoardHeader extends React.Component{
+    constructor(props){
+        super(props);
+        this.logOut = this.logOut.bind(this);
+    }
+    
     logOut() {
+        console.log("dashboardheader logout",this.props)
         this.props.dispatch(setCurrentUser(null));
         this.props.dispatch(setAuthToken(null));
         clearAuthToken();
@@ -16,7 +22,7 @@ export class DashBoardHeader extends React.Component{
     return (
         <AppBar title={<span >Expense Manager</span>}
             iconElementLeft={<Avatar src="" size={30} />}
-            iconElementRight={<RaisedButton label="Log Out" secondary={true} onClick={this.logOut()}/>}
+            iconElementRight={<RaisedButton label="Log Out" secondary={true} onClick={this.logOut}/>}
         />
     );
     }

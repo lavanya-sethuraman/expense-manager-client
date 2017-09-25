@@ -19,6 +19,7 @@ export class Signup extends React.Component {
             errorText3: ""
         };
         this.signUpDetails = { fullName: "", userName: "", password: "" };
+
     }
     handleOpen = () => {
         this.setState({ open: true });
@@ -98,12 +99,21 @@ export class Signup extends React.Component {
             this.validateUserName(this.signUpDetails.userName) &&
             this.validatePassword(this.signUpDetails.password)) 
         {
-            this.setState({ open: false });
             const {userName, password, fullName} = this.signUpDetails;
             const user = {userName, password, fullName};
             return this.props
                 .dispatch(registerUser(user))
-                .then(() => this.props.dispatch(login(userName, password)));
+                .then((res) => {
+                    if(res.reason === ""){
+                        this.setState({ open: false });
+                        this.props.dispatch(login(userName, password));
+                        return;
+                    }
+                    else {
+                        this.setState({ errorText2: res.message })
+                    }
+                })
+                
         }
 
     }

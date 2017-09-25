@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { refreshAuthToken } from '../actions/auth';
 import "../index.css";
 
+
 export class ExpenseManager extends React.Component {
     componentDidMount() {
         if (this.props.hasAuthToken) {
@@ -41,7 +42,6 @@ export class ExpenseManager extends React.Component {
         clearInterval(this.refreshInterval);
     }
     render() {
-        console.log("in expense manager",this.props)
         return (
             <MuiThemeProvider>
                 <Router>
@@ -63,3 +63,4 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(ExpenseManager);
+
