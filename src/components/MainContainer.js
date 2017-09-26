@@ -5,6 +5,7 @@ import SetBudget from '../containers/SetBudget';
 import EnterExpense from '../containers/EnterExpense';
 import TrackSpending from '../containers/TrackSpending';
 import Paper from 'material-ui/Paper';
+import Graphs from '../components/Graphs';
 import '../index.css';
 
 const style = {
@@ -40,9 +41,7 @@ const routes = [
   {
     path: '/graphs',
     exact: true,
-    main: () => <Paper style={style} zDepth={1}>
-      <div id="container"></div>
-    </Paper>,
+    main: () => <Paper style={style} zDepth={1}><Graphs /></Paper>,
   }
 ]
 
