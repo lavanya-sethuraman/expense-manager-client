@@ -7,7 +7,7 @@ export default class Datepicker extends React.Component {
 
     const minDate = new Date();
     const maxDate = new Date();
-    minDate.setDate(minDate.getDate()-10);
+    minDate.setDate(new Date(minDate.getFullYear(), minDate.getMonth(), 1)); //var lastDay = new Date(y, m + 1, 0)
     maxDate.setDate(maxDate.getDate());
 
     this.state = {
@@ -22,6 +22,7 @@ export default class Datepicker extends React.Component {
         <DatePicker
           floatingLabelText="Expense Date"
           mode="landscape"
+          autoOk={true}
           minDate={this.state.minDate}
           maxDate={this.state.maxDate}
           onChange={this.props.onChange}

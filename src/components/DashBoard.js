@@ -18,7 +18,7 @@ export class DashBoard extends React.Component {
 }
 
   render(){
-    console.log("in dashboard", this.props);
+    console.log(this.props)    
     if (!this.props.loggedIn) {
       return <Redirect to="/" />;
     }

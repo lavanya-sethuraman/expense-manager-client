@@ -1,5 +1,3 @@
-// import {API_BASE_URL} from '../config';
-
 export const SET_BUDGET = 'SET_BUDGET';
 export const setBudget = (budget) => ({
     type: SET_BUDGET,
