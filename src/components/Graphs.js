@@ -1,5 +1,5 @@
 import React from 'react';
-import Chart from '../components/Highcharts';
+import Chart from '../components/highcharts';
 const options = {
     chart: {
         type: 'column',

@@ -1,7 +1,7 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Home from '../components/Home';
-import DashBoard from '../components/DashBoard';
+import Home from '../components/home';
+import DashBoard from '../components/dash-board';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { refreshAuthToken } from '../actions/auth';

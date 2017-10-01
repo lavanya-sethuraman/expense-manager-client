@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import {fetchProtectedData} from '../actions/protected-data';
-import DashBoardHeader from '../components/DashBoardHeader';
-import MainContainer from '../components/MainContainer';
+import DashBoardHeader from '../components/dash-board-header';
+import MainContainer from '../components/main-container';
 import { Grid, Row } from 'react-flexbox-grid';
 import "../index.css";
 

@@ -1,12 +1,16 @@
-export const SET_BUDGET = 'SET_BUDGET';
-export const setBudget = (budget) => ({
-    type: SET_BUDGET,
+import { API_BASE_URL } from '../config';
+import { normalizeResponseErrors } from './utils';
+
+
+export const SET_BUDGET_SUCCESS = 'SET_BUDGET';
+export const setBudgetSuccess = budget => ({
+    type: SET_BUDGET_SUCCESS,
     budget
 });
 
-export const ENTER_EXPENSE = 'ENTER_EXPENSE';
-export const enterExpense = (expense) => ({
-    type: ENTER_EXPENSE,
+export const ENTER_EXPENSE_SUCCESS = 'ENTER_EXPENSE';
+export const enterExpenseSuccess = expense => ({
+    type: ENTER_EXPENSE_SUCCESS,
     expense
 });
 
@@ -16,3 +20,38 @@ export const trackSpending = (expense,budget) => ({
     expense,
     budget
 });
+
+
+export const setBudget = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+
+    return fetch(`${API_BASE_URL}/protected/budget`, {
+        method: 'PUT',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(({data}) => dispatch(setBudgetSuccess(data)))
+        .catch(err => {
+            return (err);
+        });
+    }
+
+    export const enterExpense = () => (dispatch, getState) => {
+        const authToken = getState().auth.authToken;
+    
+        return fetch(`${API_BASE_URL}/protected/expense`, {
+            method: 'PUT',
+            headers: {
+                Authorization: `Bearer ${authToken}`
+            }
+        })
+            .then(res => normalizeResponseErrors(res))
+            .then(res => res.json())
+            .then(({data}) => dispatch(setBudgetSuccess(data)))
+            .catch(err => {
+                return (err);
+            });
+        }

@@ -1,11 +1,11 @@
 import React from 'react';
-import SideBar from '../components/SideBar';
+import SideBar from '../components/side-bar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import SetBudget from '../containers/SetBudget';
-import EnterExpense from '../containers/EnterExpense';
-import TrackSpending from '../containers/TrackSpending';
+import SetBudget from '../containers/set-budget';
+import EnterExpense from '../containers/enter-expense';
+import TrackSpending from '../containers/track-spending';
 import Paper from 'material-ui/Paper';
-import Graphs from '../components/Graphs';
+import Graphs from '../components/graphs';
 import '../index.css';
 
 const style = {

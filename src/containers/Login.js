@@ -27,18 +27,12 @@ export class Login extends React.Component {
 
     login = () => {
          this.props.dispatch(login(this.values.userName, this.values.password))
-         .then((res) => {
-             console.log("in login",res)
-            if(res !== undefined){
-                this.setState({ errorText:"Incorrect User Name or password" })
-                return;
-            }
-            else {
-                this.setState({ open: false });
-            }
+         .then(res => {
+            if (res !== undefined){
+                this.setState({ errorText:"Incorrect User Name or password" });
+            } 
         })
-        
-
+       
     }
     render() {
         const actions = [

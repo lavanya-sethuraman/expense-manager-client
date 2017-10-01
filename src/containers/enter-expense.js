@@ -3,10 +3,10 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
-import Datepicker from '../components/DatePicker';
+import Datepicker from '../components/date-picker';
 import { connect } from 'react-redux';
 import { enterExpense } from '../actions/index'
-import EnterExpenseModal from '../containers/EnterExpenseModal';
+import EnterExpenseModal from '../containers/enter-expense-modal';
 import '../index.css';
 
 const style = {

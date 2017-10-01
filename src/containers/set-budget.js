@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import { connect } from 'react-redux';
 import { setBudget } from '../actions/index'
-import SetBudgetModal from '../containers/SetBudgetModal';
+import SetBudgetModal from '../containers/set-budget-modal';
 import '../index.css';
 
 const style = {
