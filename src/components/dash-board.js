@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import {fetchProtectedData} from '../actions/protected-data';
+import {fetchExpenseManager} from '../actions/expense-manager';
 import DashBoardHeader from '../components/dash-board-header';
 import MainContainer from '../components/main-container';
 import { Grid, Row } from 'react-flexbox-grid';
@@ -14,11 +14,11 @@ export class DashBoard extends React.Component {
     if (!this.props.loggedIn) {
        return;
     }
-    this.props.dispatch(fetchProtectedData());
+    this.props.dispatch(fetchExpenseManager());
 }
 
   render(){
-    console.log(this.props)    
+    console.log("dashboard",this.props.expenseManager)    
     if (!this.props.loggedIn) {
       return <Redirect to="/" />;
     }
@@ -44,7 +44,7 @@ const mapStateToProps = state => {
       name: currentUser
           ? `${currentUser.fullName}`
           : '',
-      protectedData: state.protectedData.data
+      expenseManager: state.expenseManager
   };
 };
 

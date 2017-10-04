@@ -13,4 +13,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-console.log(store.getState());
+console.log("store",store.getState());

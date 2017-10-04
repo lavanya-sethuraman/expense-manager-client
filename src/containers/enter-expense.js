@@ -5,7 +5,7 @@ import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import Datepicker from '../components/date-picker';
 import { connect } from 'react-redux';
-import { enterExpense } from '../actions/index'
+import { enterExpense } from '../actions/expense-manager'
 import EnterExpenseModal from '../containers/enter-expense-modal';
 import '../index.css';
 
@@ -43,17 +43,19 @@ export class EnterExpense extends React.Component {
         const categories = [ 'gas','water','electricity','rent','tv','phone','groceries','restaurant','kids','travel','misc' ];
         const category = categories.filter(function(category,index){
                                                 if(value-1 === index)
-                                                return category; return "";});
+                                                return category; 
+                                                else return "";});
         this.setState ({category:category[0]});
 
     }
     enterExpense(expense) {
-        console.log(this.props.expense)
+        console.log(this.props)
         this.props.dispatch(enterExpense(expense));
     }
 
     render() {
-        let expense = Object.assign({}, this.state);
+        let {category, amount, date} = this.state;
+        let expense = {category, amount, date};
         return (
             <Paper style={style} zDepth={1}>
                 <h1>Enter Expenses</h1>
@@ -95,7 +97,7 @@ export class EnterExpense extends React.Component {
     }
 }
 const mapStateToProps = state => ({
-    expense: state.expense
+    expense: state.expenseManager.expense
 });
 
 export default connect(mapStateToProps)(EnterExpense);

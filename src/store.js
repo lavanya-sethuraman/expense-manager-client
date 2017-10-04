@@ -1,16 +1,14 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux';
-import {expenseManagerReducer} from './reducers/index';
 import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
 import authReducer from './reducers/auth';
-import protectedDataReducer from './reducers/protected-data';
+import expenseManagerReducer from './reducers/expense-manager';
 import {setAuthToken} from './actions/auth';
 
 const store = createStore(
     combineReducers({
         expenseManager: expenseManagerReducer,
-        auth: authReducer,
-        protectedData: protectedDataReducer
+        auth: authReducer
     }),
     applyMiddleware(thunk)
 );

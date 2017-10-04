@@ -9,7 +9,7 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 import { connect } from 'react-redux';
-import { trackSpending } from '../actions/index'
+//import { trackSpending } from '../actions/index'
 import '../index.css';
 
 const style = {
@@ -24,7 +24,7 @@ const style = {
 export class TrackSpending extends React.Component {
 
     render() {
-    this.props.dispatch(trackSpending());
+    //this.props.dispatch(trackSpending());
     console.log('BUDGET',this.props.budget,'EXPENSE',this.props.expense)
     return (
             <Paper style={style} zDepth={1}>

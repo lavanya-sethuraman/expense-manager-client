@@ -14,7 +14,6 @@ export default class EnterExpenseModal extends React.Component {
         const { enterExpense, expense } = this.props;
         enterExpense(expense);
         this.setState({ open: true });
-        console.log(this.props.expense)
     };
 
     handleClose = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import { connect } from 'react-redux';
-import { setBudget } from '../actions/index'
+import { setBudget } from '../actions/expense-manager'
 import SetBudgetModal from '../containers/set-budget-modal';
 import '../index.css';
 
@@ -22,8 +22,7 @@ export class SetBudget extends React.Component {
     }
 
     render() {
-        let budget = Object.assign({}, this.props.budget);
-        console.log("The Budget is set as: ", this.props.budget);
+        let budget = {};
         return (
             <Paper style={style} zDepth={1}>
                 <h1>Set Budget</h1>
@@ -126,7 +125,7 @@ export class SetBudget extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    budget: state.budget
+    budget: state.expenseManager.budget
 });
 
 export default connect(mapStateToProps)(SetBudget);
