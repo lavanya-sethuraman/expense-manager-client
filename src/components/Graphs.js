@@ -85,7 +85,6 @@ const options = {
 
 
 export default class Graphs extends React.Component {
-
     render() {
         return (
             <Chart container='chart' options={options} />

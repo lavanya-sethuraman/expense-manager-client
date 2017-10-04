@@ -4,7 +4,8 @@ import {Redirect} from 'react-router-dom';
 import {fetchExpenseManager} from '../actions/expense-manager';
 import DashBoardHeader from '../components/dash-board-header';
 import MainContainer from '../components/main-container';
-import { Grid, Row } from 'react-flexbox-grid';
+import { Grid, Row , Col} from 'react-flexbox-grid';
+//import {Grid, Row, Col} from 'react-material-responsive-grid';
 import "../index.css";
 
 
@@ -26,10 +27,14 @@ export class DashBoard extends React.Component {
   return (
     <Grid fluid>
       <Row>
+        <Col md={12} xs={12}>
         <DashBoardHeader />
+        </Col>
       </Row>
       <Row>
+        <Col>
         <MainContainer />
+        </Col>
       </Row>
     </Grid>
 
