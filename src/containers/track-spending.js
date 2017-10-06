@@ -8,15 +8,21 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 import { connect } from 'react-redux';
-//import { trackSpending } from '../actions/index'
 import '../index.css';
 
 
 export class TrackSpending extends React.Component {
 
     render() {
-    //this.props.dispatch(trackSpending());
-    console.log('BUDGET',this.props.budget,'EXPENSE',this.props.expense)
+        // const totalExpense = this.props.expenseManager.totalExpense;
+        // totalExpense.map((item,index) => (
+        // <TableRow>
+        //     <TableRowColumn>Gas</TableRowColumn>
+        //     <TableRowColumn>0</TableRowColumn>
+        // </TableRow>
+        // ));
+
+        console.log("track", this.props.expenseManager.totalExpense)
     return (
             <div className="style">
                 <h1>Track Expenses</h1>
@@ -81,9 +87,16 @@ export class TrackSpending extends React.Component {
 }
 }
 
-const mapStateToProps = state => ({
-    budget: state.budget,
-    expense: state.expense
-});
+const mapStateToProps = state => {
+    const { currentUser } = state.auth;
+    return {
+      loggedIn: currentUser !== null,
+      userName: currentUser ? state.auth.currentUser.userName : '',
+      name: currentUser
+        ? `${currentUser.fullName}`
+        : '',
+      expenseManager: state.expenseManager
+    };
+  };
 
 export default connect(mapStateToProps)(TrackSpending);

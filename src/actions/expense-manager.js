@@ -1,24 +1,5 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
-
-
-export const SET_BUDGET_SUCCESS = 'SET_BUDGET_SUCCESS';
-export const setBudgetSuccess = budget => ({
-    type: SET_BUDGET_SUCCESS,
-    budget
-});
-
-export const ENTER_EXPENSE_SUCCESS = 'ENTER_EXPENSE_SUCCESS';
-export const enterExpenseSuccess = expense => ({
-    type: ENTER_EXPENSE_SUCCESS,
-    expense
-});
-
-export const TRACK_SPENDING_SUCCESS = 'TRACK_SPENDING_SUCCESS';
-export const trackSpendingSuccess = (expense) => ({
-    type: TRACK_SPENDING_SUCCESS,
-    expense
-});
    
 export const FETCH_EXPENSE_MANAGER_SUCCESS = 'FETCH_EXPENSE_MANAGER_SUCCESS';
 export const fetchExpenseManagerSuccess = data => ({
@@ -44,7 +25,7 @@ export const setBudget = budget => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(data => dispatch(setBudgetSuccess(data)))
+        .then(({data}) => dispatch(fetchExpenseManagerSuccess(data)))
         .catch(err => {
                 return (err);
         });
@@ -62,7 +43,7 @@ export const enterExpense = expense => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(data => dispatch(enterExpenseSuccess(data)))
+        .then(({data}) => dispatch(fetchExpenseManagerSuccess(data)))
         .catch(err => {
                 return (err);
         });

@@ -18,7 +18,7 @@ export class DashBoard extends React.Component {
   }
 
   render() {
-    console.log("dashboard", this.props.expenseManager)
+    console.log("dashboard", this.props)
     if (!this.props.loggedIn) {
       return <Redirect to="/" />;
     }
@@ -33,7 +33,7 @@ export class DashBoard extends React.Component {
 
         <Row>
           <Col xs>
-             <MainContainer />
+             <MainContainer name={this.props.name}/>
           </Col>
         </Row>
       </Grid>

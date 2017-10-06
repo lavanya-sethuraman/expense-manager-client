@@ -36,7 +36,8 @@ const routes = [
   }
 ]
 
-export default function MainContainer() {
+export default function MainContainer(props) {
+  console.log("props in maincontainer",props)
   return (
     <Router>
       <Row>
@@ -52,6 +53,7 @@ export default function MainContainer() {
             path={route.path}
             exact={route.eaxct}
             component={route.main}
+            name={props.name}
           />
         ))}
         </Col>
@@ -59,3 +61,4 @@ export default function MainContainer() {
     </Router>
   );
 }
+
