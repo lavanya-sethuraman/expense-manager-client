@@ -6,6 +6,8 @@ import '../../src/test-set-up'
 
 describe('EnterExpenseModal', () => {
     it('Renders without crashing', () => {
-        shallow(<EnterExpenseModal />);
+        let expense = {category: "gas", amount: 200, date:new Date()};
+        shallow(<EnterExpenseModal expense={expense} />);
     });
 });
+

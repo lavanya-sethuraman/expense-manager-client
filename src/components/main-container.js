@@ -4,24 +4,15 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SetBudget from '../containers/set-budget';
 import EnterExpense from '../containers/enter-expense';
 import TrackSpending from '../containers/track-spending';
-import Paper from 'material-ui/Paper';
 import Graphs from '../components/graphs';
+import { Row, Col } from 'react-flexbox-grid';
 import '../index.css';
-
-const style = {
-  height: 500,
-  width: 900,
-  marginTop: 20,
-  marginLeft: 50,
-  textAlign: 'center',
-  display: 'inline-block',
-};
 
 const routes = [
   {
     path: '/dashboard',
     exact: true,
-    main: () => <Paper style={style} zDepth={1}><h1>Welcome!</h1></Paper>,
+    main: () => <div className="style"><h1>Welcome!</h1></div>,
   },
   {
     path: '/setbudget',
@@ -41,15 +32,20 @@ const routes = [
   {
     path: '/graphs',
     exact: true,
-    main: () => <Paper style={style} zDepth={1}><Graphs /></Paper>,
+    main: () => <div className="style"><h1>Expense Chart</h1><Graphs /></div>,
   }
 ]
 
 export default function MainContainer() {
   return (
     <Router>
-      <div className="inline">
-        <SideBar />
+      <Row>
+        <Col xs={0} sm={3} md={3} lg={4} >
+        <div className="windowSize">
+          <SideBar />
+          </div>
+        </Col>
+        <Col xs={12} sm={9} md={9} lg={8}>
         {routes.map((route, index) => (
           <Route
             key={index}
@@ -58,7 +54,8 @@ export default function MainContainer() {
             component={route.main}
           />
         ))}
-      </div>
+        </Col>
+      </Row>
     </Router>
   );
 }

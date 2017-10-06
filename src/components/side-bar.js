@@ -8,12 +8,13 @@ import '../index.css';
 
 const style = {
     display: 'inline-block',
-    margin: '16px 32px 16px 0',
+    margin: '50px 32px 16px 0',
 };
 
 export default function SideBar() {
     return (
-        <Paper className="sidebar left" style={style}>
+        
+        <Paper style={style}>
             <Menu>
                 <Link className="noLine" to={`/setbudget`}>
                     <MenuItem primaryText="Set Budget" />

@@ -49,6 +49,10 @@ export class ExpenseManager extends React.Component {
                         <main>
                             <Route exact path="/" component={Home} />
                             <Route exact path="/dashboard" component={DashBoard} />
+                            <Route exact path="/setbudget" component={DashBoard} />
+                            <Route exact path="/enterexpenses" component={DashBoard} />
+                            <Route exact path="/trackspending" component={DashBoard} />
+                            <Route exact path="/graphs" component={DashBoard} />
                         </main>
                     </div>
                 </Router>

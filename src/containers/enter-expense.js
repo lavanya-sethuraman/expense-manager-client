@@ -2,21 +2,12 @@ import React from 'react';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
-import Paper from 'material-ui/Paper';
 import Datepicker from '../components/date-picker';
 import { connect } from 'react-redux';
 import { enterExpense } from '../actions/expense-manager'
 import EnterExpenseModal from '../containers/enter-expense-modal';
 import '../index.css';
 
-const style = {
-    height: 350,
-    width: 900,
-    marginTop: 20,
-    marginLeft: 50,
-    textAlign: 'center',
-    display: 'inline-block',
-};
 const styles = {
     customWidth: {
         width: 200,
@@ -57,7 +48,7 @@ export class EnterExpense extends React.Component {
         let {category, amount, date} = this.state;
         let expense = {category, amount, date};
         return (
-            <Paper style={style} zDepth={1}>
+            <div className="style">
                 <h1>Enter Expenses</h1>
                 <DropDownMenu
                     value={this.state.value}
@@ -92,7 +83,7 @@ export class EnterExpense extends React.Component {
                 <EnterExpenseModal expense={expense} enterExpense={this.enterExpense.bind(this)} />
                 <br />
                 <br />
-            </Paper>
+            </div>
         );
     }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import { required, nonEmpty, isTrimmed } from '../validators';
 import {registerUser} from '../actions/users';
@@ -132,7 +131,7 @@ export class Signup extends React.Component {
         ];
         return (
             <div>
-                <RaisedButton label="Sign-up" primary={true} onClick={this.handleOpen} />
+                <FlatButton label="Sign-up" onClick={this.handleOpen} />
                 <Dialog
                     title="Sign Up"
                     actions={actions}

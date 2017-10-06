@@ -1,7 +1,6 @@
 import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import {login} from '../actions/auth';
 import { connect } from 'react-redux';
@@ -49,7 +48,7 @@ export class Login extends React.Component {
         ];
         return (
             <div>
-                <RaisedButton label="Log-in" primary={true} onClick={this.handleOpen} />
+                <FlatButton label="Log-in" onClick={this.handleOpen} />
                 <Dialog
                     title="Log in to get started."
                     actions={actions}

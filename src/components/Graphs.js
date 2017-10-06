@@ -6,7 +6,7 @@ const options = {
     },
   
     title: {
-        text: 'Expense Manager'
+        text: ''
     },
   
     xAxis: {

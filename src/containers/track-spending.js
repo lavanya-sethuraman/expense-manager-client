@@ -1,5 +1,4 @@
 import React from 'react';
-import Paper from 'material-ui/Paper';
 import {
     Table,
     TableBody,
@@ -12,14 +11,6 @@ import { connect } from 'react-redux';
 //import { trackSpending } from '../actions/index'
 import '../index.css';
 
-const style = {
-    height: 670,
-    width: 900,
-    marginTop: 20,
-    marginLeft: 50,
-    textAlign: 'center',
-    display: 'inline-block',
-};
 
 export class TrackSpending extends React.Component {
 
@@ -27,7 +18,7 @@ export class TrackSpending extends React.Component {
     //this.props.dispatch(trackSpending());
     console.log('BUDGET',this.props.budget,'EXPENSE',this.props.expense)
     return (
-            <Paper style={style} zDepth={1}>
+            <div className="style">
                 <h1>Track Expenses</h1>
                 <Table>
                     <TableHeader displaySelectAll={false}>
@@ -85,7 +76,7 @@ export class TrackSpending extends React.Component {
                 </Table>
                 <br />
                 <br />
-            </Paper>
+            </div>
     );
 }
 }

@@ -1,19 +1,9 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
-import Paper from 'material-ui/Paper';
 import { connect } from 'react-redux';
 import { setBudget } from '../actions/expense-manager'
 import SetBudgetModal from '../containers/set-budget-modal';
 import '../index.css';
-
-const style = {
-    height: 940,
-    width: 900,
-    marginTop: 20,
-    marginLeft: 50,
-    textAlign: 'center',
-    display: 'inline-block',
-};
 
 export class SetBudget extends React.Component {
 
@@ -24,7 +14,7 @@ export class SetBudget extends React.Component {
     render() {
         let budget = {};
         return (
-            <Paper style={style} zDepth={1}>
+            <div className="style">
                 <h1>Set Budget</h1>
                 <TextField
                     type="number"
@@ -119,7 +109,7 @@ export class SetBudget extends React.Component {
                 <SetBudgetModal budget={budget} setBudget={this.setBudget.bind(this)} />
                 <br />
                 <br />
-            </ Paper>
+            </div>
         );
     }
 }
