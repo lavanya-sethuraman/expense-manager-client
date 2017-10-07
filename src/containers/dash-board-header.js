@@ -4,7 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import {connect} from 'react-redux';
 import {setCurrentUser, setAuthToken} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
-import MenuDrawer from './menu-drawer';
+import MenuDrawer from '../components/menu-drawer';
 
 export class DashBoardHeader extends React.Component{
     constructor(props){

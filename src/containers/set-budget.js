@@ -2,7 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import { connect } from 'react-redux';
 import { setBudget } from '../actions/expense-manager'
-import SetBudgetModal from '../containers/set-budget-modal';
+import SetBudgetModal from '../components/set-budget-modal';
 import '../index.css';
 
 export class SetBudget extends React.Component {

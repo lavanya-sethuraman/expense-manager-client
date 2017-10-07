@@ -1,10 +1,10 @@
 import React from 'react';
-import SideBar from '../components/side-bar';
+import SideBar from './side-bar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SetBudget from '../containers/set-budget';
 import EnterExpense from '../containers/enter-expense';
 import TrackSpending from '../containers/track-spending';
-import Graphs from '../components/graphs';
+import Graphs from '../containers/graphs';
 import { Row, Col } from 'react-flexbox-grid';
 import '../index.css';
 

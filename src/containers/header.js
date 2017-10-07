@@ -1,8 +1,8 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Avatar from 'material-ui/Avatar';
-import Login from '../containers/login';
-import Signup from '../containers/sign-up';
+import Login from './login';
+import Signup from './sign-up';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 

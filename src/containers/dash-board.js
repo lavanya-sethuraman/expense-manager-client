@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { fetchExpenseManager } from '../actions/expense-manager';
-import DashBoardHeader from '../components/dash-board-header';
+import DashBoardHeader from '../containers/dash-board-header';
 import MainContainer from '../components/main-container';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import "../index.css";

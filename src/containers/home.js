@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/header';
+import Header from './header';
 import About from '../components/about';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';

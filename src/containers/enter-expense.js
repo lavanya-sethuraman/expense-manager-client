@@ -5,7 +5,7 @@ import TextField from 'material-ui/TextField';
 import Datepicker from '../components/date-picker';
 import { connect } from 'react-redux';
 import { enterExpense } from '../actions/expense-manager'
-import EnterExpenseModal from '../containers/enter-expense-modal';
+import EnterExpenseModal from '../components/enter-expense-modal';
 import '../index.css';
 
 const styles = {
