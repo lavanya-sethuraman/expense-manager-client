@@ -4,8 +4,6 @@ import About from '../components/about';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Grid, Row , Col} from 'react-flexbox-grid';
-
-
 import "../index.css";
 
 export function Home(props) {
