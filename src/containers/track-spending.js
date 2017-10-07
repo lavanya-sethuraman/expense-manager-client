@@ -14,15 +14,13 @@ import '../index.css';
 export class TrackSpending extends React.Component {
 
     render() {
-        // const totalExpense = this.props.expenseManager.totalExpense;
-        // totalExpense.map((item,index) => (
-        // <TableRow>
-        //     <TableRowColumn>Gas</TableRowColumn>
-        //     <TableRowColumn>0</TableRowColumn>
-        // </TableRow>
-        // ));
-
-        console.log("track", this.props.expenseManager.totalExpense)
+        const totalExpense = this.props.expenseManager.totalExpense;
+        const expenseTable = totalExpense.map((item,index) => (
+        <TableRow key={index}>
+            <TableRowColumn>{item.category}</TableRowColumn>
+            <TableRowColumn>{item.amount}</TableRowColumn>
+        </TableRow>
+        ));
     return (
             <div className="style">
                 <h1>Track Expenses</h1>
@@ -34,50 +32,7 @@ export class TrackSpending extends React.Component {
                         </TableRow>
                     </TableHeader>
                     <TableBody displayRowCheckbox={false}>
-                        <TableRow>
-                            <TableRowColumn>Gas</TableRowColumn>
-                            <TableRowColumn>0</TableRowColumn>
-                        </TableRow>
-                        <TableRow>
-                            <TableRowColumn>Water</TableRowColumn>
-                            <TableRowColumn>0</TableRowColumn>
-                        </TableRow>
-                        <TableRow>
-                            <TableRowColumn>Electricity</TableRowColumn>
-                            <TableRowColumn>0</TableRowColumn>
-                        </TableRow>
-                        <TableRow>
-                            <TableRowColumn>Rent or Mortgage</TableRowColumn>
-                            <TableRowColumn>0</TableRowColumn>
-                        </TableRow>
-                        <TableRow>
-                            <TableRowColumn>Television</TableRowColumn>
-                            <TableRowColumn>0</TableRowColumn>
-                        </TableRow>
-                        <TableRow>
-                            <TableRowColumn>Phone</TableRowColumn>
-                            <TableRowColumn>0</TableRowColumn>
-                        </TableRow>
-                        <TableRow>
-                            <TableRowColumn>Groceries</TableRowColumn>
-                            <TableRowColumn>0</TableRowColumn>
-                        </TableRow>
-                        <TableRow>
-                            <TableRowColumn>Restaurant</TableRowColumn>
-                            <TableRowColumn>0</TableRowColumn>
-                        </TableRow>
-                        <TableRow>
-                            <TableRowColumn>Kids</TableRowColumn>
-                            <TableRowColumn>0</TableRowColumn>
-                        </TableRow>
-                        <TableRow>
-                            <TableRowColumn>Travel</TableRowColumn>
-                            <TableRowColumn>0</TableRowColumn>
-                        </TableRow>
-                        <TableRow>
-                            <TableRowColumn>Miscellaneous</TableRowColumn>
-                            <TableRowColumn>0</TableRowColumn>
-                        </TableRow>
+                        {expenseTable}
                     </TableBody>
                 </Table>
                 <br />
