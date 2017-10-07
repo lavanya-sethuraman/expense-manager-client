@@ -14,11 +14,9 @@ export default class Chart extends React.Component {
             this.props.options
         );
     }
-
     componentWillUnmount() {
         this.chart.destroy();
     }
-
     render() {
         return (<div id={this.props.container}></div>);
     }
