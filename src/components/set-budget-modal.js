@@ -11,10 +11,12 @@ export default class SetBudgetModal extends React.Component {
         }
     }
     handleOpen = () => {
-        const { setBudget, budget } = this.props;
+        const { setBudget, budget, validate } = this.props;
         setBudget(budget);
-        this.setState({ open: true });
-    };
+        if(validate(budget)){
+            this.setState({ open: true });
+         };
+}
 
     handleClose = () => {
         this.setState({ open: false });
