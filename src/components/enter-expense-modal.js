@@ -23,6 +23,11 @@ export default class EnterExpenseModal extends React.Component {
             dialogTitle = "Alert!";
             dialogMessage = "Please enter a valid amount." ;
         }
+        else if (expense.date === ""){
+            dialogTitle = "Alert!";
+            dialogMessage = "Please select a date." ;
+        }
+
         else {
             dialogMessage = `Expense entered for ${expense.category}.` ;
             dialogTitle = "Expense Entered!"

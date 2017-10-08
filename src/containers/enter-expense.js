@@ -21,7 +21,7 @@ export class EnterExpense extends React.Component {
             value: 0,
             category:'',
             amount:0,
-            date: new Date()
+            date: ""
         };
     }
 
@@ -40,7 +40,6 @@ export class EnterExpense extends React.Component {
 
     }
     enterExpense(expense) {
-        console.log(this.props)
         this.props.dispatch(enterExpense(expense));
     }
 

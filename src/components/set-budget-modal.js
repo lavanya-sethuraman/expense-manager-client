@@ -11,13 +11,16 @@ export default class SetBudgetModal extends React.Component {
         }
     }
     handleOpen = () => {
-        const { setBudget, budget, validate } = this.props;
+        const { setBudget, budget } = this.props;
+        let error = false;
         setBudget(budget);
-        if(validate(budget)){
+        if (Object.values(budget).some((value) => value === 0 || isNaN(value))) {
+            error = true;
+        }
+        if (error !== true) {
             this.setState({ open: true });
-         };
-}
-
+        }
+    }
     handleClose = () => {
         this.setState({ open: false });
     };
@@ -40,6 +43,7 @@ export default class SetBudgetModal extends React.Component {
                     open={this.state.open}
                     onRequestClose={this.handleClose}>
                     Your Budget has been successfully set.
+
         </Dialog>
             </div>
         );

@@ -25,6 +25,7 @@ export default class Datepicker extends React.Component {
           autoOk={true}
           minDate={this.state.minDate}
           maxDate={this.state.maxDate}
+          onChange={this.props.onChange}
         />
 
       </div>
