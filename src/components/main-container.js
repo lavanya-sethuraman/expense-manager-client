@@ -37,7 +37,6 @@ const routes = [
 ]
 
 export default function MainContainer(props) {
-  console.log("props in maincontainer",props)
   return (
     <Router>
       <Row>

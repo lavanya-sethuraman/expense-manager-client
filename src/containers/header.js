@@ -12,7 +12,7 @@ export function Header(props) {
     }
     return (
         <AppBar title={<span >Expense Manager</span>}
-            iconElementLeft={<Avatar src="" size={30} />}
+            iconElementLeft={<i class="material-icons">attach_money</i>}
             iconElementRight={<div> <Signup />
                                     <Login />
                                 </div>

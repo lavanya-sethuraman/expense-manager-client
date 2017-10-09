@@ -15,23 +15,24 @@ export class TrackSpending extends React.Component {
 
     render() {
         const totalExpense = this.props.expenseManager.totalExpense;
+        const budget = this.props.expenseManager.budget;
         const expenseTable = totalExpense.map((item,index) => (
         <TableRow key={index}>
             <TableRowColumn>{item.category}</TableRowColumn>
-            <TableRowColumn>{item.amount}</TableRowColumn>
+            <TableRowColumn>${item.amount}</TableRowColumn>
         </TableRow>
         ));
     return (
             <div className="style">
                 <h1>Track Expenses</h1>
-                <Table>
+                <Table fixedHeader={true}>
                     <TableHeader displaySelectAll={false}>
                         <TableRow>
-                            <TableHeaderColumn>Catergory</TableHeaderColumn>
-                            <TableHeaderColumn>Expenses</TableHeaderColumn>
+                            <TableHeaderColumn><h4>Catergory</h4></TableHeaderColumn>
+                            <TableHeaderColumn><h4>Expenses</h4></TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
-                    <TableBody displayRowCheckbox={false}>
+                    <TableBody displayRowCheckbox={false} showRowHover={true}>
                         {expenseTable}
                     </TableBody>
                 </Table>
