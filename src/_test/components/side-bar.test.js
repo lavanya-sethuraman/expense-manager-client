@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import  SideBar from './side-bar';
-import '../../src/test-set-up'
+import  SideBar from '../../components/side-bar';
+import '../test-set-up'
 
 
 describe('SideBar', () => {

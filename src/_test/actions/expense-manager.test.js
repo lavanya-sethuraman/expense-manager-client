@@ -4,8 +4,8 @@ import {
     setBudget,
     enterExpense,
     fetchExpenseManager
-} from './expense-manager';
-import { API_BASE_URL } from '../config';
+} from '../../actions/expense-manager';
+import { API_BASE_URL } from '../../config';
 
 describe('fetchExpenseManagerSuccess', () => {
     it('Should return the action', () => {

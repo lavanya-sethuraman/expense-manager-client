@@ -6,6 +6,7 @@ import Datepicker from '../components/date-picker';
 import { connect } from 'react-redux';
 import { enterExpense } from '../actions/expense-manager'
 import EnterExpenseModal from '../components/enter-expense-modal';
+import _ from 'lodash';
 import '../index.css';
 
 const styles = {
@@ -71,9 +72,15 @@ export class EnterExpense extends React.Component {
                 <TextField
                     hintText="Amount"
                     type="number"
+                    step={0.01}
                     min='0'
+                    max="9999999"
                     floatingLabelText="Enter Expense"
                     floatingLabelFixed={true}
+                   onInput={{/* e => 
+                        e.target.value = 
+                          //regex if string has 2 decimal then update e.target.value parseFloat(e.target.value).toFixed(2
+                    } */}}
                     onChange={(e) => { this.setState({ amount: e.currentTarget.value }) }}
                 />
                 <br />

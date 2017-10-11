@@ -4,8 +4,8 @@ import {
     SET_CURRENT_USER,
     setCurrentUser,
     login
-} from './auth';
-import {API_BASE_URL} from '../config';
+} from '../../actions/auth';
+import {API_BASE_URL} from '../../config';
 
 
 describe('setAuthToken', () => {

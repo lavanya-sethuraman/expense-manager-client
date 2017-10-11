@@ -1,6 +1,5 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
-import Avatar from 'material-ui/Avatar';
 import Login from './login';
 import Signup from './sign-up';
 import { connect } from 'react-redux';
@@ -12,7 +11,7 @@ export function Header(props) {
     }
     return (
         <AppBar title={<span >Expense Manager</span>}
-            iconElementLeft={<i class="material-icons">attach_money</i>}
+            iconElementLeft={<i className="material-icons">attach_money</i>}
             iconElementRight={<div> <Signup />
                                     <Login />
                                 </div>

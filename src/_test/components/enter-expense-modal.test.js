@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import  EnterExpenseModal from './enter-expense-modal';
-import '../../src/test-set-up'
+import  EnterExpenseModal from '../../components/enter-expense-modal';
+import '../test-set-up'
 
 
 describe('EnterExpenseModal', () => {

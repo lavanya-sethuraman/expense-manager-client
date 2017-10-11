@@ -1,5 +1,5 @@
-import reducer from './expense-manager';
-import {fetchExpenseManagerSuccess, fetchExpenseManagerError} from '../actions/expense-manager';
+import reducer from '../../reducers/expense-manager';
+import {fetchExpenseManagerSuccess, fetchExpenseManagerError} from '../../actions/expense-manager';
 
 describe('expense manager Reducer', () => {
 

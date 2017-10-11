@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import  MainContainer from './main-container';
-import '../../src/test-set-up'
+import  MainContainer from '../../components/main-container';
+import '../test-set-up'
 
 
 describe(' MainContainer', () => {

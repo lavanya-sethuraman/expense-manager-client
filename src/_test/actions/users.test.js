@@ -1,5 +1,5 @@
-import {registerUser} from './users';
-import {API_BASE_URL} from '../config';
+import {registerUser} from '../../actions/users';
+import {API_BASE_URL} from '../../config';
 
 
 describe('registerUser', () => {

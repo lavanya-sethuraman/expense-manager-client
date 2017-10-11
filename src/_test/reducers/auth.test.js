@@ -1,5 +1,5 @@
-import reducer from './auth';
-import { setAuthToken, setCurrentUser } from '../actions/auth';
+import reducer from '../../reducers/auth';
+import { setAuthToken, setCurrentUser } from '../../actions/auth';
 
 describe('auth Reducer', () => {
 
