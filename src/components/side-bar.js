@@ -13,7 +13,6 @@ const style = {
 
 export default function SideBar() {
     return (
-        
         <Paper style={style}>
             <Menu>
                 <Link className="noLine" to={`/setbudget`}>
