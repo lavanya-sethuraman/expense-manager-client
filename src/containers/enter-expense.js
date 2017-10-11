@@ -6,7 +6,7 @@ import Datepicker from '../components/date-picker';
 import { connect } from 'react-redux';
 import { enterExpense } from '../actions/expense-manager'
 import EnterExpenseModal from '../components/enter-expense-modal';
-import _ from 'lodash';
+//import _ from 'lodash';
 import '../index.css';
 
 const styles = {

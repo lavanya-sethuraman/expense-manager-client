@@ -15,7 +15,7 @@ export class TrackSpending extends React.Component {
 
     render() {
         const totalExpense = this.props.expenseManager.totalExpense;
-        const budget = this.props.expenseManager.budget;
+        //const budget = this.props.expenseManager.budget;
         const expenseTable = totalExpense.map((item,index) => (
         <TableRow key={index}>
             <TableRowColumn>{item.category}</TableRowColumn>
