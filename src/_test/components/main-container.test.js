@@ -13,7 +13,6 @@ describe(' MainContainer', () => {
     it('Should render sidebar', () => {
         const wrapper = mount(<MuiThemeProvider><MainContainer /></MuiThemeProvider>);
         expect(wrapper.find('.windowSize').exists()).toEqual(true);
-        
     });
 
 });

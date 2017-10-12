@@ -13,7 +13,6 @@ export class DashBoardHeader extends React.Component{
     }
     
     logOut() {
-        console.log("dashboardheader logout",this.props)
         this.props.dispatch(setCurrentUser(null));
         this.props.dispatch(setAuthToken(null));
         clearAuthToken();
@@ -22,7 +21,7 @@ export class DashBoardHeader extends React.Component{
     return (
         <AppBar title={<span>Expense Manager</span>}
             iconElementLeft={<MenuDrawer />}
-            iconElementRight={<FlatButton label="Log Out" secondary={true} onClick={this.logOut}/>}
+            iconElementRight={<FlatButton className="log-out" label="Log Out" secondary={true} onClick={this.logOut}/>}
         />
     );
     }

@@ -74,14 +74,9 @@ export class EnterExpense extends React.Component {
                     type="number"
                     step={0.01}
                     min='0'
-                    max="9999999"
                     floatingLabelText="Enter Expense"
                     floatingLabelFixed={true}
-                   onInput={{/* e => 
-                        e.target.value = 
-                          //regex if string has 2 decimal then update e.target.value parseFloat(e.target.value).toFixed(2
-                    } */}}
-                    onChange={(e) => { this.setState({ amount: e.currentTarget.value }) }}
+                    onChange={(e) => { this.setState({ amount:e.currentTarget.value }) }}
                 />
                 <br />
                 <Datepicker  onChange={(e, date) => { this.setState({ date }) }} />
