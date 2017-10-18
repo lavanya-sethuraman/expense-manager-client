@@ -40,12 +40,12 @@ export default function MainContainer(props) {
   return (
     <Router>
       <Row>
-        <Col xs={0} sm={3} md={3} lg={4} >
+        <Col xs={0} sm={3} md={3} lg={3} >
         <div className="windowSize">
           <SideBar />
           </div>
         </Col>
-        <Col xs={12} sm={9} md={9} lg={8}>
+        <Col xs={12} sm={9} md={9} lg={9}>
         {routes.map((route, index) => (
           <Route
             key={index}

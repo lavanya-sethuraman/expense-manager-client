@@ -2,12 +2,38 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import  Home from '../../containers/home';
 import '../test-set-up';
-import store from '../../store';
+import {mockStore} from '../test-set-up';
 
+const expenseManagerReducer = {
+    budget: {},
+    expense: [],
+    totalExpense:{}
+};
 
+const authReducer= {
+    authToken: null,
+    currentUser: "test"
+};
 
-describe('Home', () => {
+const initialState = {
+    expenseManager: expenseManagerReducer,
+    auth: authReducer
+}
+const store = mockStore(initialState);
+
+describe('Dashboard Header', () => {
+    let wrapper; 
+    beforeEach(() => {
+        wrapper = shallow(<Home store={store} />); 
+    }); 
+
     it('Renders without crashing', () => {
-        shallow(<Home store={store}/>);
+        expect(wrapper.length).toEqual(1);        
     });
+
+    it("check user loggeedIn", () => {
+        expect(wrapper.prop('loggedIn')).toEqual(true);        
+        
+     });
+
 });
