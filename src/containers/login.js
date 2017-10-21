@@ -4,6 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 import {login} from '../actions/auth';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
 
 
 export class Login extends React.Component {
@@ -23,6 +24,11 @@ export class Login extends React.Component {
     handleClose = () => {
         this.setState({ open: false });
     };
+
+    demo = () => {
+        swal("Demo Log-in Details", "UserName: test , Pwd: 12345");        
+    };
+
 
     login = () => {
          this.props.dispatch(login(this.values.userName, this.values.password))
@@ -45,6 +51,11 @@ export class Login extends React.Component {
                 secondary={true}
                 onClick={this.handleClose}  
             />,
+            <FlatButton
+            label="Demo"
+            primary={true}
+            onClick={this.demo}  
+        />
         ];
         return (
             <div>

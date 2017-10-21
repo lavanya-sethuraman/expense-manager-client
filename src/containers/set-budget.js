@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField';
 import { connect } from 'react-redux';
 import SetBudgetModal from '../components/set-budget-modal';
 import { setBudget } from '../actions/expense-manager';
+import { Row, Col } from 'react-flexbox-grid';
 import '../index.css';
 
 let budget = {
@@ -50,8 +51,10 @@ export class SetBudget extends React.Component {
 
     render() {
         return (
-            <div className="style">
+            <div className="styles">
                 <h1>Set Budget</h1>
+                <Row>
+                    <Col xs>
                 <TextField
                     type="number"
                     min='1'
@@ -107,6 +110,8 @@ export class SetBudget extends React.Component {
                     onChange={(e) => { budget.phone = parseFloat(e.currentTarget.value); }}
                 />
                 <br />
+                </Col>
+                <Col xs>
                 <TextField
                     type="number"
                     min='1'
@@ -153,6 +158,8 @@ export class SetBudget extends React.Component {
                 />
                 <br />
                 <br />
+                </Col>
+                </Row>
                 <SetBudgetModal budget={budget} setBudget={this.setBudget.bind(this)} />
                 <br />
                 <br />

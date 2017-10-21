@@ -14,21 +14,21 @@ const style = {
 export default function SideBar() {
     return (
         <Paper style={style}>
-            <Menu>
+            <Menu className="bkgnd">
                 <Link className="noLine" to={`/setbudget`}>
-                    <MenuItem primaryText="Set Budget" />
+                    <MenuItem className="white" primaryText="Set Budget" />
                 </Link>
                 <Divider />
                 <Link className="noLine" to={`/enterexpenses`}>
-                    <MenuItem primaryText="Enter Expenses" />
+                    <MenuItem  className="white" primaryText="Enter Expenses" />
                 </Link>
                 <Divider />
                 <Link className="noLine" to={`/graphs`}>
-                    <MenuItem primaryText="Graphs and Charts" />
+                    <MenuItem  className="white" primaryText="Graphs and Charts" />
                 </Link>
                 <Divider />
                 <Link className="noLine" to={`/trackspending`}>
-                    <MenuItem primaryText="Track Spending" />
+                    <MenuItem  className="white" primaryText="Track Spending" />
                 </Link>
             </Menu>
         </Paper>

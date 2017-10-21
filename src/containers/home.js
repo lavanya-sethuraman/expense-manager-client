@@ -11,14 +11,14 @@ export function Home(props) {
         return <Redirect to="/dashboard" />;
     }
     return (
-        <Grid>
+        <Grid fluid style={containerStyle}>
         <Row>
-          <Col xs>
+          
           <Header />
-          </Col>
+          
         </Row>
         <Row>
-          <Col xs>
+          <Col xs className="style">
           <About />
           </Col>
         </Row>
@@ -30,5 +30,10 @@ export function Home(props) {
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
+
+const containerStyle = {
+  paddingLeft: '0px',
+  paddingRight: '0px'
+}
 
 export default connect(mapStateToProps)(Home);

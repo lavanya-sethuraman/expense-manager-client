@@ -24,7 +24,7 @@ export class DashBoard extends React.Component {
     }
 
     return (
-      <Grid>
+      <Grid fluid style={containerStyle}>
         <Row>
           <Col xs >
             <DashBoardHeader />
@@ -53,4 +53,8 @@ const mapStateToProps = state => {
   };
 };
 
+const containerStyle = {
+  paddingLeft: '0px',
+  paddingRight: '0px'
+}
 export default connect(mapStateToProps)(DashBoard);

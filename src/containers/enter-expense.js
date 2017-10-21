@@ -48,7 +48,7 @@ export class EnterExpense extends React.Component {
         let {category, amount, date} = this.state;
         let expense = {category, amount, date};
         return (
-            <div className="style">
+            <div className="styles">
                 <h1>Enter Expenses</h1>
                 <DropDownMenu
                     value={this.state.value}

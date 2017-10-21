@@ -2,6 +2,8 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import '../index.css';
+
 
 export default class SetBudgetModal extends React.Component {
     constructor(props) {
@@ -34,8 +36,8 @@ export default class SetBudgetModal extends React.Component {
             />
         ];
         return (
-            <div>
-                <RaisedButton label="Set Budget" primary={true} onClick={this.handleOpen} />
+            <div className="center">
+                <RaisedButton className="center" label="Set Budget" primary={true} onClick={this.handleOpen} />
                 <Dialog
                     title="Budget Set!"
                     actions={actions}
