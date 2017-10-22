@@ -20,34 +20,41 @@ export class TrackSpending extends React.Component {
         var categoriesWithAmt = _.map(totalExpense, 'category');
 
         function updateExpenses(item) {
-          if (!_.includes(categoriesWithAmt, item)) {
-            totalExpense.push({category: item, amount: 0})
-          }
+            if (!_.includes(categoriesWithAmt, item)) {
+                totalExpense.push({ category: item, amount: 0 })
+            }
         }
-        
+
         function updateBudget(item) {
-          item['budget'] = budget[item['category']];
-          let trend = (item['budget']) - (item['amount']);
-          if(trend<1){
-            (item['trend']) = '$'+ trend + "(Over the budget)";
-          }
-          else{
-            (item['trend']) = '$'+ trend +'(remaining)';
-          }
+            let trend = '';
+            if (_.isEmpty(budget) ) {
+                trend = 'Budget Not Set';
+                (item['trend']) = trend;
+            }
+            else {
+                item['budget'] = budget[item['category']];
+                trend = (item['budget']) - (item['amount']);
+                if (trend < 1) {
+                    (item['trend']) = '$' + trend + "(Over the budget)";
+                }
+                else {
+                    (item['trend']) = '$' + trend + '(remaining)';
+                }
+            }
         }
-        
+
         _.forEach(Object.keys(budget), updateExpenses);
         _.map(totalExpense, updateBudget)
-        
-        const expenseTable = totalExpense.map((item,index) => (
-        <TableRow key={index}>
-            <TableRowColumn>{_.capitalize(item.category)}</TableRowColumn>
-            <TableRowColumn>${item.amount}</TableRowColumn>
-            <TableRowColumn>${item.budget}</TableRowColumn>
-            <TableRowColumn>{item.trend}</TableRowColumn>
-        </TableRow>
+
+        const expenseTable = totalExpense.map((item, index) => (
+            <TableRow key={index}>
+                <TableRowColumn>{_.capitalize(item.category)}</TableRowColumn>
+                <TableRowColumn>${item.amount}</TableRowColumn>
+                <TableRowColumn>${item.budget}</TableRowColumn>
+                <TableRowColumn>{item.trend}</TableRowColumn>
+            </TableRow>
         ));
-    return (
+        return (
             <div className="styles">
                 <h1>Track Expenses</h1>
                 <Table fixedHeader={true}>
@@ -66,20 +73,20 @@ export class TrackSpending extends React.Component {
                 <br />
                 <br />
             </div>
-    );
-}
+        );
+    }
 }
 
 const mapStateToProps = state => {
     const { currentUser } = state.auth;
     return {
-      loggedIn: currentUser !== null,
-      userName: currentUser ? state.auth.currentUser.userName : '',
-      name: currentUser
-        ? `${currentUser.fullName}`
-        : '',
-      expenseManager: state.expenseManager
+        loggedIn: currentUser !== null,
+        userName: currentUser ? state.auth.currentUser.userName : '',
+        name: currentUser
+            ? `${currentUser.fullName}`
+            : '',
+        expenseManager: state.expenseManager
     };
-  };
+};
 
 export default connect(mapStateToProps)(TrackSpending);
