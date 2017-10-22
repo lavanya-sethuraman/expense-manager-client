@@ -7,11 +7,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 describe(' MainContainer', () => {
     it('Renders without crashing', () => {
-        shallow(< MainContainer />);
+        shallow(< MainContainer  name="test"/>);
     });
 
     it('Should render sidebar', () => {
-        const wrapper = mount(<MuiThemeProvider><MainContainer /></MuiThemeProvider>);
+        const wrapper = mount(<MuiThemeProvider><MainContainer name="test" /></MuiThemeProvider>);
         expect(wrapper.find('.windowSize').exists()).toEqual(true);
     });
 
