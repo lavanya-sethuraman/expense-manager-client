@@ -17,12 +17,34 @@ export class TrackSpending extends React.Component {
     render() {
         const totalExpense = this.props.expenseManager.totalExpense;
         const budget = this.props.expenseManager.budget;
+        var categoriesWithAmt = _.map(totalExpense, 'category');
+
+        function updateExpenses(item) {
+          if (!_.includes(categoriesWithAmt, item)) {
+            totalExpense.push({category: item, amount: 0})
+          }
+        }
+        
+        function updateBudget(item) {
+          item['budget'] = budget[item['category']];
+          let trend = (item['budget']) - (item['amount']);
+          if(trend<1){
+            (item['trend']) = '$'+ trend + "(Over the budget)";
+          }
+          else{
+            (item['trend']) = '$'+ trend +'(remaining)';
+          }
+        }
+        
+        _.forEach(Object.keys(budget), updateExpenses);
+        _.map(totalExpense, updateBudget)
         
         const expenseTable = totalExpense.map((item,index) => (
         <TableRow key={index}>
             <TableRowColumn>{_.capitalize(item.category)}</TableRowColumn>
             <TableRowColumn>${item.amount}</TableRowColumn>
-            <TableRowColumn>${item.amount}</TableRowColumn>
+            <TableRowColumn>${item.budget}</TableRowColumn>
+            <TableRowColumn>{item.trend}</TableRowColumn>
         </TableRow>
         ));
     return (
@@ -31,9 +53,10 @@ export class TrackSpending extends React.Component {
                 <Table fixedHeader={true}>
                     <TableHeader displaySelectAll={false}>
                         <TableRow>
-                            <TableHeaderColumn><h4>Catergory</h4></TableHeaderColumn>
+                            <TableHeaderColumn><h4>Category</h4></TableHeaderColumn>
                             <TableHeaderColumn><h4>Expenses</h4></TableHeaderColumn>
                             <TableHeaderColumn><h4>Budget</h4></TableHeaderColumn>
+                            <TableHeaderColumn><h4>Balance</h4></TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody displayRowCheckbox={false} showRowHover={true} stripedRows={true}>
