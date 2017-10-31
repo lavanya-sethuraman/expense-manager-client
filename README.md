@@ -27,10 +27,3 @@ Expense Manager is a complete online money management tool designed to keep trac
 
 ### Back-end
 - Node.js, Express.js, Passport.js, REST APIs, Mocha, Chai, MongoDB, Mongoose
-
-
-Recurring bills such as your utilities, phone and cable can be budgeted.
-Non-recurring items can also be tracked and accounted for.
-Date-wise expense entry.
-Ability to record entries against each budget to see how much is left.
-We provide you with reports and graphs to help you understand your cash flow.
