@@ -32,7 +32,7 @@ export class DashBoard extends React.Component {
 
         <Row>
           <Col xs>
-             <MainContainer name={this.props.name}/>
+             <MainContainer/>
           </Col>
         </Row>
       </Grid>

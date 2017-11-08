@@ -13,8 +13,8 @@ export class Graphs extends React.Component {
         this.props.totalExpense.forEach((expense) => {
             amount.push(expense.amount)
         });
-        console.log(amount, categories)
         let options = {
+            colors:[ '#00bcd4' ],
             chart: {
                 type: 'column'
             },

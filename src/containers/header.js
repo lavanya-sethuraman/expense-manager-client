@@ -10,8 +10,8 @@ export function Header(props) {
         return <Redirect to="/dashboard" />;
     }
     return (
-        <AppBar title={<span >Expense Manager</span>}
-            iconElementLeft={<i className="material-icons">attach_money</i>}
+        <AppBar style={{textAlign:'center'}} title={<span >Expense Manager</span>}
+            iconElementLeft={<i></i>}
             iconElementRight={<div> <Signup />
                                     <Login />
                                 </div>

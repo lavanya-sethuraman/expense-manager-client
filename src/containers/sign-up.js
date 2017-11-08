@@ -6,6 +6,7 @@ import { required, nonEmpty, isTrimmed } from '../validators';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import { connect } from 'react-redux';
+import '../index.css';
 
 
 export class Signup extends React.Component {
@@ -130,8 +131,8 @@ export class Signup extends React.Component {
             />,
         ];
         return (
-            <div>
-                <FlatButton label="Sign-up" onClick={this.handleOpen} />
+            <div className="align">
+                <FlatButton style={{color:'white'}} label="Sign-up" onClick={this.handleOpen} />
                 <Dialog
                     title="Sign Up"
                     actions={actions}

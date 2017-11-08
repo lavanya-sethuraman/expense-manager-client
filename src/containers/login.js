@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField';
 import {login} from '../actions/auth';
 import { connect } from 'react-redux';
 import swal from 'sweetalert';
+import '../index.css';
 
 
 export class Login extends React.Component {
@@ -58,8 +59,8 @@ export class Login extends React.Component {
         />
         ];
         return (
-            <div>
-                <FlatButton label="Log-in" onClick={this.handleOpen} />
+            <div className="align">
+                <FlatButton style={{color:'white'}} label="Log-in" onClick={this.handleOpen} />
                 <Dialog
                     title="Log in to get started."
                     actions={actions}

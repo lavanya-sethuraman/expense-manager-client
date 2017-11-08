@@ -19,7 +19,7 @@ export class DashBoardHeader extends React.Component{
     }
     render(){
     return (
-        <AppBar title={<span>Expense Manager</span>}
+        <AppBar style={{textAlign:'center'}} title={<span>Expense Manager</span>}
             iconElementLeft={<MenuDrawer />}
             iconElementRight={<FlatButton className="log-out" label="Log Out" secondary={true} onClick={this.logOut}/>}
         />

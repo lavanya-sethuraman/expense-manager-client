@@ -7,12 +7,11 @@ import TrackSpending from '../containers/track-spending';
 import Graphs from '../containers/graphs';
 import { Row, Col } from 'react-flexbox-grid';
 import '../index.css';
-let name="";
 const routes = [
   {
     path: '/dashboard',
     exact: true,
-    main: () => <div className="styles"><h1>Welcome {name}!</h1></div>,
+    main: () => <EnterExpense />,
   },
   {
     path: '/setbudget',
@@ -36,8 +35,7 @@ const routes = [
   }
 ]
 
-export default function MainContainer(props) {
-  name=props.name.toUpperCase();
+export default function MainContainer() {
   return (
     <Router>
       <Row>
@@ -53,7 +51,6 @@ export default function MainContainer(props) {
             path={route.path}
             exact={route.eaxct}
             component={route.main}
-            props={props}
           />
         ))}
         </Col>
