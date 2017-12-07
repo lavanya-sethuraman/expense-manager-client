@@ -13,9 +13,7 @@ export function Home(props) {
     return (
         <Grid fluid style={containerStyle}>
         <Row>
-          
           <Header />
-          
         </Row>
         <Row>
           <Col xs className="style">
@@ -23,7 +21,7 @@ export function Home(props) {
           </Col>
         </Row>
       </Grid>
-  
+
     );
 }
 
